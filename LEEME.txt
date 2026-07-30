@@ -1,0 +1,106 @@
+CANCHA COMPARTIDA — Repositorio de textos de Educación Física y Deportes
+==========================================================================
+
+Esta es una página web estática (HTML + CSS + JS puro, sin necesidad de
+servidor, base de datos ni instalar nada). Funciona abriendo directamente
+"index.html" en el navegador, y también se puede subir a cualquier
+hosting gratuito.
+
+ESTRUCTURA DE CARPETAS
+-----------------------
+cancha-compartida/
+├── index.html          → estructura de la página (no necesitas tocarlo)
+├── LEEME.txt            → este archivo
+├── css/
+│   └── estilos.css      → todo el diseño visual
+├── js/
+│   ├── datos.js         → AQUÍ EDITAS TODO: título del sitio, contacto,
+│   │                       categorías y la lista de libros/textos
+│   └── app.js           → la lógica (buscador, filtros, etc.)
+└── pdfs/
+    └── (aquí van tus archivos PDF)
+
+
+PASO A PASO: AGREGAR UN TEXTO NUEVO
+-------------------------------------
+1. Copia el PDF del texto dentro de la carpeta "pdfs/".
+   Ejemplo: pdfs/didactica-voleibol-secundaria.pdf
+
+2. Abre "js/datos.js" con cualquier editor de texto (Bloc de notas,
+   VS Code, Notepad++, etc.)
+
+3. Dentro del arreglo LIBROS, copia uno de los objetos de ejemplo
+   (uno de los bloques entre { } ) y pégalo antes del corchete final "]".
+
+4. Reemplaza los datos:
+   - titulo:      título exacto del texto
+   - categoria:   el "id" de una temática de la lista CATEGORIAS
+                  (por ejemplo: "didactica", "psicomotricidad",
+                  "deporte-escolar", "recreacion", "evaluacion",
+                  "inclusiva", "gestion")
+   - anio:        año de defensa/graduación
+   - esfm:        nombre de la ESFM de procedencia
+   - autores:     nombre, correo y teléfono de cada autor/a
+                  (puedes poner uno o varios autores)
+   - resumen:     2 o 3 líneas que describan de qué trata el texto
+   - palabrasClave: 3 o 4 palabras sueltas para mejorar el buscador
+   - archivo:     el nombre EXACTO del PDF que pusiste en /pdfs
+                  (debe coincidir letra por letra, mayúsculas incluidas)
+   - paginas:     número de páginas (opcional, puedes borrar la línea)
+
+5. Guarda el archivo. Recarga index.html en el navegador y el texto
+   nuevo ya aparecerá en el catálogo, con su buscador y filtro
+   funcionando automáticamente.
+
+Puedes borrar los 4 libros de ejemplo cuando ya tengas los reales:
+simplemente elimina sus bloques { ... } del arreglo LIBROS.
+
+
+PERSONALIZAR EL SITIO (nombre, misión, contacto)
+--------------------------------------------------
+Todo esto también está al inicio de "js/datos.js", dentro de CONFIG:
+- nombreSitio: el nombre que aparece en el encabezado y el título
+- eslogan:     subtítulo corto
+- mision:      el texto que explica el propósito del repositorio
+                (ya viene escrito con tu idea original, ajústalo si quieres)
+- contacto:    nombre del equipo, correo, teléfono, WhatsApp e institución
+                que aparecen en la sección "Cómo participar" y en el pie
+                de página
+
+AGREGAR O CAMBIAR TEMÁTICAS
+-----------------------------
+En "js/datos.js", en el arreglo CATEGORIAS, cada temática tiene:
+- id:     identificador corto sin espacios (se usa en "categoria" de cada libro)
+- nombre: el texto que se ve en los filtros
+- color:  uno de estos 4 tonos ya definidos en el diseño:
+          var(--cancha), var(--pista), var(--medalla), var(--pizarra)
+
+Puedes agregar tantas categorías como necesites; los filtros y colores
+se generan solos.
+
+
+CÓMO PUBLICARLA EN INTERNET (gratis)
+--------------------------------------
+Cualquiera de estas opciones funciona con esta misma carpeta, sin
+cambiar nada de código:
+
+- GitHub Pages: sube la carpeta a un repositorio de GitHub y activa
+  "Pages" en la configuración del repositorio.
+- Netlify o Vercel: arrastra la carpeta completa a netlify.com/drop
+  (no requiere cuenta para una prueba rápida) y obtienes un enlace
+  público al instante.
+
+En todos los casos, asegúrate de subir también la carpeta "pdfs/" con
+todos los archivos dentro.
+
+
+NOTAS TÉCNICAS
+----------------
+- No se usan frameworks ni pasos de compilación: es HTML, CSS y JS
+  planos, así que cualquier profesor con conocimientos básicos puede
+  mantenerlo.
+- Las tipografías (Anton, Newsreader, JetBrains Mono) se cargan desde
+  Google Fonts; si el sitio se usará sin conexión a internet, se pueden
+  descargar esas fuentes y enlazarlas localmente en index.html.
+- El buscador filtra por título, autor, ESFM y palabras clave. El
+  selector de orden cambia entre más recientes, más antiguos y A-Z.

@@ -1,0 +1,6 @@
+Coloca aquí todos los archivos PDF de los textos.
+
+El nombre de cada archivo debe coincidir exactamente con el campo
+"archivo" que le pongas a ese libro en js/datos.js.
+
+Puedes borrar este archivo de texto cuando ya hayas subido tus PDF reales.

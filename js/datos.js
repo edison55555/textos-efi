@@ -63,7 +63,7 @@ const LIBROS = [
     ],
     resumen: "Material de iniciación deportiva para acompañar a las y los estudiantes de cuarto año de primaria con ejercicios de multilateralidad utilizando diferentes tipos de balones. Subsistema de Educación Regular.",
     palabrasClave: ["iniciación deportiva", "ratuki", "primaria", "4to de primaria"],
-    archivo: "iniciacion-deportiva-con-ratuki.pdf", // coloca el PDF con este nombre en /pdfs
+    archivo: "RATUKI.pdf", // coloca el PDF con este nombre en /pdfs
     paginas: null // EDITAR AQUÍ si quieres mostrar el número de páginas
   }
 ];
